@@ -30,63 +30,70 @@
             <div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button" style="width: 120px;color: rgb(168,53,101);font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;border-radius: 5px;" href="login.php">Log in</a><a class="btn btn-primary" role="button" href="signup.php" style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a></div>
         </div>
     </nav>
-    <section class="position-relative py-4 py-xl-5" style="margin-top: 55px;margin-bottom: 45px;">
+    <section class="photo-gallery py-4 py-xl-5">
         <div class="container">
-            <div class="row row-cols-3 d-flex justify-content-center">
-                <div class="col-10">
-                    <div class="card mb-5">
-                        <div class="card-body d-flex flex-column align-items-center" style="background: #EBEBEB;padding-top: 60px;">
-                            <div>
-                                <h1 style="font-size: 15px;margin-bottom: 50px;">Sign-Up Form</h1>
-                            </div>
-                            <form class="text-center" method="post">
-                                <div class="mb-3">
-                                    <div>
-                                        <h1 class="text-start" style="font-size: 13px;">Personal Information</h1>
-                                    </div>
-                                    <div class="row gx-5 gy-3">
-                                        <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Email Address</p><input class="border rounded-0 border-dark-subtle form-control" type="email" name="email">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Password</p><input class="border rounded-0 border-dark-subtle form-control" type="password" name="password">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Nationality</p><input class="form-control" type="text" name="nationality">
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">First Name</p><input class="form-control" type="text" name="firstname">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Last Name</p><input class="form-control" type="text" name="lastname">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Place of Birth</p><input class="form-control" type="text" name="birthplace">
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Middle Name</p><input class="form-control" type="text" name="middlename">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Gender</p><input class="form-control" type="text" name="gender">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Civil Status</p><input class="form-control" type="text" name="civilstatus">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div>
-                                            <h1 class="text-start" style="font-size: 13px;margin-top: 30px;">Contact Information</h1>
-                                        </div>
-                                        <div class="row gx-5 gy-3">
-                                            <div class="col">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Email Address</p><input class="border rounded-0 border-dark-subtle form-control" type="email" name="email">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Home Address<input class="form-control" type="text" name="address"></p>
-                                            </div>
-                                            <div class="col">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Mobile Number</p><input class="form-control" type="text" name="phonenum">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">District/Barangay</p><input class="form-control" type="text" name="barangay">
-                                            </div>
-                                            <div class="col">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Landline</p><input class="form-control" type="text" name="landlinenum">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Municipality/City</p><input class="form-control" type="text" name="city">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding-top: 35px;"></div>
-                                <div class="d-xl-flex d-xxl-flex justify-content-xl-center justify-content-xxl-center mb-3"><button class="btn btn-outline-light text-center justify-content-xxl-center d-block w-100" type="submit" style="border-radius: 16px;border-width: 4px;border-color: #A83565;color: #A83565;font-family: Karla, sans-serif;font-size: 14px;max-width: 248px;">SUBMIT FORM</button></div>
-                            </form>
-                        </div>
-                    </div>
+            <div class="row mb-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <h2 style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Products</h2>
                 </div>
+            </div>
+            <div class="row gx-5 gy-5 row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-4 photos" data-bss-baguettebox="">
+                <div class="col item"><a href="../assets/img/product1shirt.jpg">
+                        <div class="card">
+                            <div class="card-body" style="background: #dedede;text-align: center;"><img class="img-fluid" src="../assets/img/product1shirt.jpg">
+                                <h4 class="card-title" style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Shirt</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col item"><a href="../assets/img/product2mug.jpg">
+                        <div class="card">
+                            <div class="card-body" style="background: #dedede;text-align: center;"><img class="img-fluid" src="../assets/img/product2mug.jpg">
+                                <h4 class="card-title" style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Mug</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col item"><a href="../assets/img/product3cup.jpg">
+                        <div class="card">
+                            <div class="card-body" style="background: #dedede;text-align: center;"><img class="img-fluid" src="../assets/img/product3cup.jpg">
+                                <h4 class="card-title" style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Cup</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col item"><a href="../assets/img/product4pen.jpg">
+                        <div class="card">
+                            <div class="card-body" style="background: #dedede;text-align: center;"><img class="img-fluid" src="../assets/img/product4pen.jpg" style="background: #ffffff;">
+                                <h4 class="card-title" style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Pen</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col item"><a href="../assets/img/product5jacket.jpg">
+                        <div class="card">
+                            <div class="card-body" style="background: #dedede;text-align: center;"><img class="img-fluid" src="../assets/img/product5jacket.jpg" style="background: #ffffff;">
+                                <h4 class="card-title" style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Jacket</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col item"><a href="../assets/img/product6pillow.jpg">
+                        <div class="card">
+                            <div class="card-body" style="background: #dedede;text-align: center;"><img class="img-fluid" src="../assets/img/product6pillow.jpg" style="background: #ffffff;" width="254" height="135">
+                                <h4 class="card-title" style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Pillow case</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col item"><a href="../assets/img/product7phonecase.jpg">
+                        <div class="card">
+                            <div class="card-body" style="background: #dedede;text-align: center;"><img class="img-fluid" src="../assets/img/product7phonecase.jpg" style="background: #ffffff;">
+                                <h4 class="card-title" style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Phone case</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col item"><a href="../assets/img/product8totebag.jpg">
+                        <div class="card">
+                            <div class="card-body" style="background: #dedede;text-align: center;"><img class="img-fluid" src="../assets/img/product8totebag.jpg" style="background: #ffffff;">
+                                <h4 class="card-title" style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Tote bag</h4>
+                            </div>
+                        </div>
+                    </a></div>
             </div>
         </div>
     </section>
