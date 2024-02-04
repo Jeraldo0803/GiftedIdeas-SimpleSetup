@@ -30,66 +30,57 @@
             <div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button" style="width: 120px;color: rgb(168,53,101);font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;border-radius: 5px;" href="login.php">Log in</a><a class="btn btn-primary" role="button" href="signup.php" style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a></div>
         </div>
     </nav>
-    <section class="position-relative py-4 py-xl-5" style="margin-top: 55px;margin-bottom: 45px;">
-        <div class="container">
-            <div class="row row-cols-3 d-flex justify-content-center">
-                <div class="col-10">
-                    <div class="card mb-5">
-                        <div class="card-body d-flex flex-column align-items-center" style="background: #EBEBEB;padding-top: 60px;">
-                            <div>
-                                <h1 style="font-size: 15px;margin-bottom: 50px;">Sign-Up Form</h1>
-                            </div>
-                            <form class="text-center" method="post">
-                                <div class="mb-3">
-                                    <div>
-                                        <h1 class="text-start" style="font-size: 13px;">Personal Information</h1>
-                                    </div>
-                                    <div class="row gx-5 gy-3">
-                                        <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Email Address</p><input class="border rounded-0 border-dark-subtle form-control" type="email" name="email">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Password</p><input class="border rounded-0 border-dark-subtle form-control" type="password" name="password">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Nationality</p><input class="form-control" type="text" name="nationality">
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">First Name</p><input class="form-control" type="text" name="firstname">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Last Name</p><input class="form-control" type="text" name="lastname">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Place of Birth</p><input class="form-control" type="text" name="birthplace">
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Middle Name</p><input class="form-control" type="text" name="middlename">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Gender</p><input class="form-control" type="text" name="gender">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Civil Status</p><input class="form-control" type="text" name="civilstatus">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div>
-                                            <h1 class="text-start" style="font-size: 13px;margin-top: 30px;">Contact Information</h1>
-                                        </div>
-                                        <div class="row gx-5 gy-3">
-                                            <div class="col">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Email Address</p><input class="border rounded-0 border-dark-subtle form-control" type="email" name="email">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Home Address<input class="form-control" type="text" name="address"></p>
-                                            </div>
-                                            <div class="col">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Mobile Number</p><input class="form-control" type="text" name="phonenum">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">District/Barangay</p><input class="form-control" type="text" name="barangay">
-                                            </div>
-                                            <div class="col">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Landline</p><input class="form-control" type="text" name="landlinenum">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Municipality/City</p><input class="form-control" type="text" name="city">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding-top: 35px;"></div>
-                                <div class="d-xl-flex d-xxl-flex justify-content-xl-center justify-content-xxl-center mb-3"><button class="btn btn-outline-light text-center justify-content-xxl-center d-block w-100" type="submit" style="border-radius: 16px;border-width: 4px;border-color: #A83565;color: #A83565;font-family: Karla, sans-serif;font-size: 14px;max-width: 248px;">SUBMIT FORM</button></div>
-                            </form>
-                        </div>
-                    </div>
+    <div class="container py-4 py-xl-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center mx-auto" style="margin-bottom: 35px;">
+                <h2 class="fw-bold text-start" style="font-family: 'Montserrat Alternates', sans-serif;">Testimonials</h2>
+            </div>
+        </div>
+        <div class="row row-cols-3 justify-content-xxl-center">
+            <div class="col">
+                <div class="d-flex" style="margin-bottom: 40px;"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" width="200" height="200"></div>
+                <div>
+                    <p class="fw-bold text-primary mb-0">John Smith</p>
+                    <p class="text-muted mb-0">Erat netus</p>
+                    <p class="bg-body-tertiary border rounded border-0 p-4" style="font-family: 'Montserrat Alternates', sans-serif;">Service is great!</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex" style="margin-bottom: 40px;"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" width="200" height="200"></div>
+                <div>
+                    <p class="fw-bold text-primary mb-0">John Smith</p>
+                    <p class="text-muted mb-0">Erat netus</p>
+                    <p class="bg-body-tertiary border rounded border-0 p-4" style="font-family: 'Montserrat Alternates', sans-serif;">Service is great!</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex" style="margin-bottom: 40px;"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" width="200" height="200"></div>
+                <div>
+                    <p class="fw-bold text-primary mb-0">John Smith</p>
+                    <p class="text-muted mb-0">Erat netus</p>
+                    <p class="bg-body-tertiary border rounded border-0 p-4" style="font-family: 'Montserrat Alternates', sans-serif;">Service is great!</p>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="row row-cols-2 justify-content-xxl-center" style="margin-top: 40px;">
+            <div class="col">
+                <div class="d-flex" style="margin-bottom: 40px;"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" width="200" height="200"></div>
+                <div>
+                    <p class="fw-bold text-primary mb-0">John Smith</p>
+                    <p class="text-muted mb-0">Erat netus</p>
+                    <p class="bg-body-tertiary border rounded border-0 p-4" style="font-family: 'Montserrat Alternates', sans-serif;">Service is great!</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex" style="margin-bottom: 40px;"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" width="200" height="200"></div>
+                <div>
+                    <p class="fw-bold text-primary mb-0">John Smith</p>
+                    <p class="text-muted mb-0">Erat netus</p>
+                    <p class="bg-body-tertiary border rounded border-0 p-4" style="font-family: 'Montserrat Alternates', sans-serif;">Service is great!</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="text-white" style="font-family: 'Montserrat Alternates', sans-serif;background: #a83565;">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">

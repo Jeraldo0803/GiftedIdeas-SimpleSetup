@@ -30,59 +30,18 @@
             <div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button" style="width: 120px;color: rgb(168,53,101);font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;border-radius: 5px;" href="login.php">Log in</a><a class="btn btn-primary" role="button" href="signup.php" style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a></div>
         </div>
     </nav>
-    <section class="position-relative py-4 py-xl-5" style="margin-top: 55px;margin-bottom: 45px;">
-        <div class="container">
-            <div class="row row-cols-3 d-flex justify-content-center">
+    <section class="position-relative py-4 py-xl-5">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
                 <div class="col-10">
                     <div class="card mb-5">
-                        <div class="card-body d-flex flex-column align-items-center" style="background: #EBEBEB;padding-top: 60px;">
-                            <div>
-                                <h1 style="font-size: 15px;margin-bottom: 50px;">Sign-Up Form</h1>
-                            </div>
-                            <form class="text-center" method="post">
-                                <div class="mb-3">
-                                    <div>
-                                        <h1 class="text-start" style="font-size: 13px;">Personal Information</h1>
-                                    </div>
-                                    <div class="row gx-5 gy-3">
-                                        <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Email Address</p><input class="border rounded-0 border-dark-subtle form-control" type="email" name="email">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Password</p><input class="border rounded-0 border-dark-subtle form-control" type="password" name="password">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Nationality</p><input class="form-control" type="text" name="nationality">
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">First Name</p><input class="form-control" type="text" name="firstname">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Last Name</p><input class="form-control" type="text" name="lastname">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Place of Birth</p><input class="form-control" type="text" name="birthplace">
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Middle Name</p><input class="form-control" type="text" name="middlename">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Gender</p><input class="form-control" type="text" name="gender">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Civil Status</p><input class="form-control" type="text" name="civilstatus">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div>
-                                            <h1 class="text-start" style="font-size: 13px;margin-top: 30px;">Contact Information</h1>
-                                        </div>
-                                        <div class="row gx-5 gy-3">
-                                            <div class="col">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Email Address</p><input class="border rounded-0 border-dark-subtle form-control" type="email" name="email">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Home Address<input class="form-control" type="text" name="address"></p>
-                                            </div>
-                                            <div class="col">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Mobile Number</p><input class="form-control" type="text" name="phonenum">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">District/Barangay</p><input class="form-control" type="text" name="barangay">
-                                            </div>
-                                            <div class="col">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Landline</p><input class="form-control" type="text" name="landlinenum">
-                                                <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Municipality/City</p><input class="form-control" type="text" name="city">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding-top: 35px;"></div>
-                                <div class="d-xl-flex d-xxl-flex justify-content-xl-center justify-content-xxl-center mb-3"><button class="btn btn-outline-light text-center justify-content-xxl-center d-block w-100" type="submit" style="border-radius: 16px;border-width: 4px;border-color: #A83565;color: #A83565;font-family: Karla, sans-serif;font-size: 14px;max-width: 248px;">SUBMIT FORM</button></div>
+                        <div class="card-body" style="background: #EBEBEB;padding-top: 60px;">
+                            <h2 class="text-center mb-4" style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Customer Query</h2>
+                            <form method="post">
+                                <div class="mb-3"><input class="form-control" type="text" id="name-2" name="name" placeholder="Name"></div>
+                                <div class="mb-3"><input class="form-control" type="email" id="email-2" name="email" placeholder="Email"></div>
+                                <div class="mb-3"><textarea class="form-control" id="message-2" name="message" rows="6" placeholder="Message"></textarea></div>
+                                <div class="d-flex justify-content-center"><button class="btn btn-primary d-block w-100" type="submit" style="border-radius: 16px;border-width: 4px;border-color: #A83565;color: #A83565;font-family: Karla, sans-serif;font-size: 14px;max-width: 248px;background: var(--bs-btn-disabled-color);">Send </button></div>
                             </form>
                         </div>
                     </div>
