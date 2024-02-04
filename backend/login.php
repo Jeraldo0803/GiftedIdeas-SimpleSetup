@@ -31,12 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     $_SESSION['status'] = $row['Status'];
 
                     # Check the account authority
-                    if ($row['Authority'] == 'superadmin') {
-                        header("Location: /src/pages/superadmin/Homepage.php");
-                    } elseif ($row['Authority'] == 'admin') {
-                        header("Location: /src/pages/admin/Homepage.php");
+                    if ($row['Authority'] == 'admin') {
+                        header("Location: "); //point to admin page
                     } elseif ($row['Authority'] == 'user') {
-                        header("Location: /src/pages/member/Homepage.php");
+                        header("Location: "); //point to home page
                     } else {
                         header("Location: /src/pages/Login.php?error=unverified");
                     }
