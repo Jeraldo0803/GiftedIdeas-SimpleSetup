@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $row = $result->fetch_assoc();
 
         if ($row['Status'] == "inactive") {
-            header("Location: /src/pages/Login.php?error=blocked");
+            header("Location: /templates/Login.php?error=blocked");
         } else {
             # Verify the password
             $hashedPassword = $row['Password'];
@@ -32,21 +32,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                     # Check the account authority
                     if ($row['Authority'] == 'admin') {
-                        header("Location: "); //point to admin page
+                        header("Location: /templates/index.php"); //point to admin page
                     } elseif ($row['Authority'] == 'user') {
-                        header("Location: "); //point to home page
+                        header("Location: /templates/index.php"); //point to home page
                     } else {
-                        header("Location: /src/pages/Login.php?error=unverified");
+                        header("Location: /templates/index.php");
                     }
                 } else {
-                    header("Location: /src/pages/Login.php?error=unverified");
+                    header("Location: /templates/Login.php?error=unverified");
                 }
             } else {
-                header("Location: /src/pages/Login.php?error=invalid");
+                header("Location: /templates/Login.php?error=invalid");
             }
         }
     } else {
-        header("Location: /src/pages/Login.php?error=invalid");
+        header("Location: /templates/Login.php??error=invalid");
     }
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-require("backend\connection.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
 
 function hash_existing_usercred_id($userIds)
 {

@@ -1,3 +1,5 @@
+Use GiftedIdeasDB;
+
 INSERT INTO UserInfo
 VALUES(
   1,

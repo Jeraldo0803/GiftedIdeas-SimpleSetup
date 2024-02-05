@@ -16,7 +16,7 @@ function check_auth($authority)
     $no_status = !isset($_SESSION['status']);
     $not_logged_in = $no_email || $no_authority || $no_status || $no_id;
     if ($not_logged_in) {
-        header("Location: /src/pages/Login.php?error=not_logged_in");
+        header("Location: /templates/Login.php?error=not_logged_in");
     }
 
     $wrong_authority = $_SESSION['authority'] != $authority;
