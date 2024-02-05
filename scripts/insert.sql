@@ -6,7 +6,6 @@ VALUES(
   'UserLN',
   'UserFN',
   'UserMN', 
-  '2000-01-01', 
   'Manila',
   'Male', 
   'Filipino',
@@ -22,10 +21,9 @@ VALUES(
 INSERT INTO UserInfo
 VALUES(
   2, 
-  'Admin',
-  'Admin',
-  'Admin',
-  '2000-01-01',
+  'AdminLN',
+  'AdminFN',
+  'AdminMN',
   'Manila',
   'Male',
   'Filipino',
@@ -42,9 +40,8 @@ INSERT INTO UserCredentials
 VALUES (
   1,
   1,
-  'user',
-  'user',
   'user@gmail.com',
+  'user',
   'active',
   'user'
 );
@@ -53,9 +50,8 @@ INSERT INTO UserCredentials
 VALUES (
   2,
   2,
-  'admin',
-  'admin',
   'admin@gmail.com',
+  'admin',
   'active',
   'admin'
 );
@@ -85,7 +81,7 @@ VALUES (
   'Monday'
 );
 
-INSERT INTO UserQueries
+INSERT INTO UserInquiries
 VALUES (
   1,
   1,
@@ -95,7 +91,7 @@ VALUES (
   'Monday'
 );
 
-INSERT INTO UserQueries
+INSERT INTO UserInquiries
 VALUES (
   2,
   2,
