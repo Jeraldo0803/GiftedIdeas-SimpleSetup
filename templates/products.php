@@ -135,6 +135,8 @@
         </div>
     </footer>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/dom-to-image.min.js"></script>
+    <script src="../assets/js/fabric.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery.js"></script>
 </body>
