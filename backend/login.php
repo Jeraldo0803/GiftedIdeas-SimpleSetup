@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                     # Check the account authority
                     if ($row['Authority'] == 'admin') {
-                        header("Location: /templates/index.php"); //point to admin page
+                        header("Location: /templates/admin.php"); //point to admin page
                     } elseif ($row['Authority'] == 'user') {
                         header("Location: /templates/index.php"); //point to home page
                     } else {

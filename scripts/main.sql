@@ -50,7 +50,9 @@ CREATE TABLE UserHistory (
 CREATE TABLE UserInquiries (
     Id INT NOT NULL AUTO_INCREMENT,
     userinfo_id INT NOT NULL,
-    UserQuery TEXT NOT NULL,
+    UserInquiryName VARCHAR(255) NOT NULL,
+    UserInquiryEmail VARCHAR(255) NOT NULL,
+    UserInquiry TEXT NOT NULL,
     InquiryTime DATETIME NOT NULL,
     InquiryDate DATETIME NOT NULL,
     InquiryDateString ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') NOT NULL,
