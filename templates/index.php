@@ -16,9 +16,15 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
     <link rel="stylesheet" href="../assets/css/Hero-Clean-Reverse-images.css">
     <link rel="stylesheet" href="../assets/css/Lightbox-Gallery-baguetteBox.min.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <div data-include="templates/header"></div>
+
+    <!--    
     <nav class="navbar navbar-expand-md sticky-top py-3" style="background: #A83565;">
         <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="index.php"
                 style="margin-left: -200px;padding: 0px;"><span style="color: rgb(255,255,255);"><img
@@ -53,7 +59,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
                     style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <div class="row" style="height: 676.391px;">
         <div class="col-6 d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center"
             style="background: rgba(234,118,166,0.28);padding-left: 50px;border-color: rgba(0,0,0,0);">
@@ -138,6 +144,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
             </div>
         </div>
     </div>
+    <!--
     <footer class="text-white" style="font-family: 'Montserrat Alternates', sans-serif;background: #a83565;">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
@@ -193,10 +200,14 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
                 </ul>
             </div>
         </div>
-    </footer>
+    </footer>-->
+    <div data-include="templates/footer"></div>
+
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery.js"></script>
+    <script src="/src/global.js"></script>
+
 </body>
 
 </html>

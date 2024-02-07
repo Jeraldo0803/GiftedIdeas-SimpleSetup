@@ -79,9 +79,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../assets/css/Hero-Clean-Reverse-images.css">
     <link rel="stylesheet" href="../assets/css/Lightbox-Gallery-baguetteBox.min.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <div data-include="templates/header"></div>
+
+    <!--
     <nav class="navbar navbar-expand-md sticky-top py-3" style="background: #A83565;">
         <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="index.php"
                 style="margin-left: -200px;padding: 0px;"><span style="color: rgb(255,255,255);"><img
@@ -116,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <section class="position-relative py-4 py-xl-5" style="margin-top: 55px;margin-bottom: 45px;">
         <div class="container">
             <div class="row row-cols-3 d-flex justify-content-center">
@@ -232,6 +238,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </section>
+    <!--
     <footer class="text-white" style="font-family: 'Montserrat Alternates', sans-serif;background: #a83565;">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
@@ -287,7 +294,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </ul>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery.js"></script>
@@ -307,6 +314,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             return true; // Allow form submission
         }
     </script>
+    <script src="/src/global.js"></script>
+
 </body>
 
 </html>

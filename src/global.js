@@ -1,7 +1,7 @@
 $(function() {
     var includes = $('[data-include]')
     $.each(includes,  function() {
-      var file = '/src/' + $(this).data('include');
+      var file = '/' + $(this).data('include');
       console.log(file);
       $('head').append('<link rel="stylesheet" href="' + file + '.css' + '">')
   

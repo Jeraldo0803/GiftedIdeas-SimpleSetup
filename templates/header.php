@@ -1,33 +1,39 @@
-<!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Gifted Ideas</title>
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&amp;display=swap">
-    <link rel="stylesheet" href="../assets/css/Carousel-Multi-Image--ISA-.css">
-    <link rel="stylesheet" href="../assets/css/Hero-Clean-Reverse-images.css">
-    <link rel="stylesheet" href="../assets/css/Lightbox-Gallery-baguetteBox.min.css">
-    <link rel="stylesheet" href="../assets/css/styles.css">
-</head>
-
-<body>
+<section>
     <nav class="navbar navbar-expand-md sticky-top py-3" style="background: #A83565;">
-        <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="index.php" style="margin-left: -200px;padding: 0px;"><span style="color: rgb(255,255,255);"><img src="../assets/img/logo.png" style="max-width: 120px;" alt="Gifted Ideas"></span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-4"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse flex-grow-0 order-md-first" id="navcol-4" style="font-family: 'Montserrat Alternates', sans-serif;font-size: 16px;">
+        <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="index.php"
+                style="margin-left: -200px;padding: 0px;"><span style="color: rgb(255,255,255);"><img
+                        src="../assets/img/logo.png" style="max-width: 120px;" alt="Gifted Ideas"></span></a><button
+                data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-4"><span
+                    class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse flex-grow-0 order-md-first" id="navcol-4"
+                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 16px;">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.php" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Home</a></li>
-                    <li class="nav-item" style="color: #ffffff;"><a class="nav-link active" href="product_editor.php" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Product Editor</a></li>
-                    <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a class="nav-link active" href="inquiries.php" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Inquiries</a></li>
-                    <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a class="nav-link active" href="testimonies.php" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Testimonies</a></li>
-                    <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a class="nav-link active" href="about.php" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.php"
+                            style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Home</a></li>
+                    <li class="nav-item" style="color: #ffffff;"><a class="nav-link active" href="product_editor.php"
+                            style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Product
+                            Editor</a></li>
+                    <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a
+                            class="nav-link active" href="inquiries.php"
+                            style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Inquiries</a>
+                    </li>
+                    <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a
+                            class="nav-link active" href="testimonies.php"
+                            style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Testimonies</a>
+                    </li>
+                    <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a
+                            class="nav-link active" href="about.php"
+                            style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">About</a></li>
                 </ul>
-                <div class="d-md-none my-2"><button class="btn btn-light me-2" type="button">Button</button><button class="btn btn-primary" type="button">Button</button></div>
+                <div class="d-md-none my-2"><button class="btn btn-light me-2" type="button">Button</button><button
+                        class="btn btn-primary" type="button">Button</button></div>
             </div>
-            <div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button" style="width: 120px;color: rgb(168,53,101);font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;border-radius: 5px;" href="login.php">Log in</a><a class="btn btn-primary" role="button" href="signup.php" style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a></div>
+
+            <div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button"
+                    style="width: 120px;color: rgb(168,53,101);font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;border-radius: 5px;"
+                    href="login.php">Log in</a><a class="btn btn-primary" role="button" href="signup.php"
+                    style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a>
+            </div>
         </div>
     </nav>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
@@ -35,6 +41,4 @@
     <script src="../assets/js/fabric.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery.js"></script>
-</body>
-
-</html>
+</section>
