@@ -1,6 +1,5 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
-check_auth("user");
 ?>
 
 <!DOCTYPE html>
