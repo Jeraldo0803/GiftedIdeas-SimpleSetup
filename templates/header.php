@@ -1,3 +1,7 @@
+<?php
+session_start();
+require($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
+?>
 <section>
     <nav class="navbar navbar-expand-md sticky-top py-3" style="background: #A83565;">
         <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="index.php"
@@ -28,12 +32,36 @@
                 <div class="d-md-none my-2"><button class="btn btn-light me-2" type="button">Button</button><button
                         class="btn btn-primary" type="button">Button</button></div>
             </div>
-
+            <?php
+            if (isset($_SESSION['id'])) {
+                echo "Welcome, " . $firstname . " " . $lastname . '
+                <div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button"
+                style="width: 120px;color: rgb(168,53,101);font-family: "Montserrat Alternates", sans-serif;font-size: 13px;border-radius: 5px;"
+                href="../backend/logout.php">Log out</a>
+                
+                ';
+            } else {
+                echo '
             <div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button"
-                    style="width: 120px;color: rgb(168,53,101);font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;border-radius: 5px;"
-                    href="login.php">Log in</a><a class="btn btn-primary" role="button" href="signup.php"
-                    style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a>
+            style="width: 120px;color: rgb(168,53,101);font-family: "Montserrat Alternates", sans-serif;font-size: 13px;border-radius: 5px;"
+            href="login.php">Log in</a>
+            
+            <a class="btn btn-primary" role="button" href="signup.php"
+            style="font-family: "Montserrat Alternates", sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a>
             </div>
+            ';
+            }
+
+            ?>
+            <!--
+            <div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button"
+                    style="width: 120px;color: rgb(168,53,101);font-family: " Montserrat Alternates",
+                    sans-serif;font-size: 13px;border-radius: 5px;" href="login.php">Log in</a>
+
+                <a class="btn btn-primary" role="button" href="signup.php" style="font-family: " Montserrat Alternates",
+                    sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color:
+                    var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a>
+            </div> -->
         </div>
     </nav>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>

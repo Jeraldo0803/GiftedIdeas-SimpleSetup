@@ -1,3 +1,8 @@
+<?php
+require($_SERVER['DOCUMENT_ROOT'] . "/backend/common.php");
+check_admin_auth();
+?>
+
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -18,6 +23,7 @@
 </head>
 
 <body>
+    <div data-include="templates/header"></div>
 
     <!--
     <nav class="navbar navbar-expand-md sticky-top py-3" style="background: #A83565;">

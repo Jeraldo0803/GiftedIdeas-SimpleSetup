@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             }
         }
     } else {
-        header("Location: /templates/Login.php??error=invalid");
+        header("Location: /templates/Login.php?error=invalid");
     }
 }
 ?>
