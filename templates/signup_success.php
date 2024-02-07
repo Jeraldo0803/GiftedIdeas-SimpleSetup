@@ -15,6 +15,32 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-md sticky-top py-3" style="background: #A83565;">
+        <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="index.php" style="margin-left: -200px;padding: 0px;"><span style="color: rgb(255,255,255);"><img src="../assets/img/logo.png" style="max-width: 120px;" alt="Gifted Ideas"></span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-4"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse flex-grow-0 order-md-first" id="navcol-4" style="font-family: 'Montserrat Alternates', sans-serif;font-size: 16px;">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.php" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Home</a></li>
+                    <li class="nav-item" style="color: #ffffff;"><a class="nav-link active" href="product_editor.php" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Product Editor</a></li>
+                    <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a class="nav-link active" href="inquiries.php" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Inquiries</a></li>
+                    <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a class="nav-link active" href="testimonies.php" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Testimonies</a></li>
+                    <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a class="nav-link active" href="about.php" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">About</a></li>
+                </ul>
+                <div class="d-md-none my-2"><button class="btn btn-light me-2" type="button">Button</button><button class="btn btn-primary" type="button">Button</button></div>
+            </div>
+            <div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button" style="width: 120px;color: rgb(168,53,101);font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;border-radius: 5px;" href="login.php">Log in</a><a class="btn btn-primary" role="button" href="signup.php" style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a></div>
+        </div>
+    </nav>
+    <section class="py-4 py-xl-5" style="height: 80vmin;">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col text-center d-flex justify-content-center align-items-center">
+                    <div>
+                        <h2 class="text-uppercase fw-bold mb-3" style="font-family: 'Montserrat Alternates', sans-serif;">RegiSTRATION COMPLETE</h2><button class="btn btn-outline-light fs-5 py-2 px-4" type="button" style="color: #000000;font-family: 'Montserrat Alternates', sans-serif;border-color: var(--bs-code-color);">Log in</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="text-white" style="font-family: 'Montserrat Alternates', sans-serif;background: #a83565;">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
