@@ -114,7 +114,8 @@
                         <div class="card-body" style="padding: 25px 16px;">
                             <h4 class="card-title" style="font-family: Karla, sans-serif;font-weight: bold;">User
                                 Activities</h4><a class="btn btn-primary" role="button"
-                                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;margin-bottom: 10px;">View
+                                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;margin-bottom: 10px;"
+                                href="queries.php">View
                                 Queries</a><a class="btn btn-primary" role="button"
                                 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;">View</a>
                         </div>
