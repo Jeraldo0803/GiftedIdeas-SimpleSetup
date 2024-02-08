@@ -1,5 +1,4 @@
 <?php
-// Check if user is admin (you should have a mechanism to verify this)
 require($_SERVER['DOCUMENT_ROOT'] . "/backend/common.php");
 check_admin_auth();
 
@@ -40,8 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_user"])) {
     mysqli_stmt_bind_param($stmt, "ssssssssssssi", $firstname, $middlename, $surname, $gender, $nationality, $placeofbirth, $civilstatus, $contactemail, $landline, $homeaddress, $districtbarangay, $municipalitycity, $userid);
     mysqli_stmt_execute($stmt);
 
-    // Redirect to user management page or display success message
-    header("Location: user_management.php");
+    header("Location: /templates/admin.php");
     exit();
 }
 ?>
