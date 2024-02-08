@@ -60,6 +60,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = mysqli_prepare($conn, $userHistoryQuery);
     mysqli_stmt_bind_param($stmt, "i", $userInfoId);
     mysqli_stmt_execute($stmt);
+
+    header("Location: /templates/signup_success.php");
+
 }
 ?>
 

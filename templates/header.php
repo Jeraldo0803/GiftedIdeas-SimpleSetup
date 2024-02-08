@@ -21,10 +21,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
                             class="nav-link active" href="inquiries.php"
                             style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Inquiries</a>
                     </li>
-                    <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a
-                            class="nav-link active" href="testimonies.php"
-                            style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Testimonies</a>
-                    </li>
+
                     <li class="nav-item" style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;"><a
                             class="nav-link active" href="about.php"
                             style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">About</a></li>
