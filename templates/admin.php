@@ -114,7 +114,7 @@ check_admin_auth();
                                 </div>
                                 <div class="col">
                                     <h6 class="mb-2" style="font-size: 13px;font-family: Karla, sans-serif;">Edit Member
-                                    </h6><a class="btn btn-primary" role="button"
+                                    </h6><a class="btn btn-primary" role="button" href="admin_edituser.php"
                                         style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">View</a>
                                 </div>
                             </div>
@@ -125,7 +125,8 @@ check_admin_auth();
                         <div class="card-body" style="padding: 25px 16px;">
                             <h4 class="card-title" style="font-family: Karla, sans-serif;font-weight: bold;">User
                                 Activities</h4><a class="btn btn-primary" role="button"
-                                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;margin-bottom: 10px;">View
+                                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;margin-bottom: 10px;"
+                                href="queries.php">View
                                 Queries</a><a class="btn btn-primary" role="button"
                                 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;">View</a>
                         </div>
