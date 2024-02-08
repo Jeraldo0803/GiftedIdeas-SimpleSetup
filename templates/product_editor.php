@@ -128,7 +128,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
                     <label for="tshirt-design">T-Shirt Design:</label>
                     <select id="tshirt-design">
                         <option value="" selected>Select one of our designs ...</option>
-                        <option value="logo.png">Gifted Ideas Logo</option>
+                        <option value="../assets/img/logo.png">Gifted Ideas Logo</option>
                     </select>
                     <br><br>
                     <label for="tshirt-custompicture">Upload your own design:</label>
@@ -138,11 +138,11 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
                         Image</a>
                     <br><br>
                     <!-- Include Fabric.js in the page -->
-                    <script src="fabric.min.js"></script>
+                    <script src="../assets/js/fabric.min.js"></script>
                     <!-- Include DomToImage in the page -->
-                    <script src="dom-to-image.min.js"></script>
+                    <script src="../assets/js/dom-to-image.min.js"></script>
                     <!-- Include FileSaver in the page -->
-                    <script src="FileSaver.min.js"></script>
+                    <script src="../assets/js/FileSaver.min.js"></script>
 
                     <script>
                         let canvas = new fabric.Canvas('tshirt-canvas');
@@ -431,7 +431,6 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
         </div>
     </footer>-->
     <div data-include="templates/footer"></div>
-
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/dom-to-image.min.js"></script>
     <script src="../assets/js/fabric.min.js"></script>
