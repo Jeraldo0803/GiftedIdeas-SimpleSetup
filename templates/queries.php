@@ -141,9 +141,9 @@
                     <div class="card-body">
 
                         <?php
-                        require($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
+                        require ($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
                         $conn = get_connection();
-                        $query = "SELECT UserInquiryName, UserInquiryEmail, InquiryTime, InquiryDateString, UserInquiry FROM UserInquiries";
+                        $query = "SELECT Id, UserInquiryName, UserInquiryEmail, InquiryTime, InquiryDateString, UserInquiry, InquiryStatus FROM UserInquiries ORDER BY InquiryTime DESC";
                         $result = mysqli_query($conn, $query);
 
                         if (mysqli_num_rows($result) > 0) {
@@ -153,6 +153,8 @@
                                 $timestamp = $row["InquiryTime"];
                                 $inquiryDateString = $row["InquiryDateString"];
                                 $message = $row["UserInquiry"];
+                                $status = isset($row["InquiryStatus"]) ? $row["InquiryStatus"] : null;
+
 
                                 $formattedTimestamp = date("F j, Y, g:i a", strtotime($timestamp));
 
@@ -161,8 +163,18 @@
                                 echo '<h6 class="text-muted card-subtitle mb-2">' . $formattedTimestamp . '</h6>';
                                 echo '<p class="card-text">' . $message . '</p>';
                                 echo '<p class="card-text">Day of Inquiry: ' . $inquiryDateString . '</p>'; // Display InquiryDateString
-                                echo '<a class="card-link" href="#">remove?</a>';
-                                echo '<a class="card-link" href="#">resolve?</a>';
+                                if ($status == "unresolved") {
+                                    // Check if "id" key exists in $row array before using it
+                                    if (isset($row["Id"])) {
+                                        echo '<a class="card-link" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">remove</a>';
+                                        echo '<a class="card-link" href="../backend/resolve_inquiry.php?id=' . $row["Id"] . '">resolve</a>';
+                                    } else {
+                                        echo "Error: Inquiry ID not found.";
+                                    }
+                                } else {
+                                    echo '<a class="card-link" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">remove</a>';
+                                    echo '<p class="text-success">Resolved</p>';
+                                }
                                 echo '</div>';
                             }
                         } else {

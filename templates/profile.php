@@ -1,3 +1,8 @@
+<?php
+session_start();
+require ($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +45,10 @@
                                 <div class="col">
                                     <h1
                                         style="font-family: 'Montserrat Alternates', sans-serif;font-size: 20px;font-weight: bold;margin-bottom: 0px;">
-                                        Profile Name</h1>
+                                        <?php
+                                        echo "$firstname" . " $lastname";
+                                        ?>
+                                    </h1>
                                 </div>
                             </div>
                             <div class="row">
