@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="card-body" style="background: #EBEBEB;padding-top: 60px;">
                             <h2 class="text-center mb-4"
                                 style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Customer
-                                Query</h2>
+                                Inquiry</h2>
                             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
                                 onsubmit="return validateForm()">
                                 <div class="mb-3"><input class="form-control" type="text" id="name-2" name="name"
