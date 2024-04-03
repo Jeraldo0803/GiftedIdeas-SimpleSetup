@@ -1,10 +1,5 @@
-<?php
-require ($_SERVER['DOCUMENT_ROOT'] . "/backend/common.php");
-check_admin_auth();
-?>
-
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -45,13 +40,13 @@ check_admin_auth();
                                 <div class="col">
                                     <h1
                                         style="font-family: 'Montserrat Alternates', sans-serif;font-size: 20px;font-weight: bold;margin-bottom: 0px;">
-                                        Admin Name</h1>
+                                        Profile Name</h1>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <h1 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 15px;">Admin
-                                        Position</h1>
+                                    <h1 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 15px;">User
+                                    </h1>
                                 </div>
                             </div>
                             <div class="row">
@@ -72,14 +67,7 @@ check_admin_auth();
                                 Information</h4>
                             <div class="row">
                                 <div class="col">
-                                    <h6 class="justify-content-xl-center align-items-xl-center mb-2"
-                                        style="font-size: 13px;font-family: Karla, sans-serif;">New Registration</h6><a
-                                        class="btn btn-primary" role="button"
-                                        style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">View</a>
-                                </div>
-                                <div class="col">
                                     <h6 class="mb-2" style="font-size: 13px;font-family: Karla, sans-serif;">Edit Member
-                                        Information
                                     </h6><a class="btn btn-primary" role="button" href="admin_edituser.php"
                                         style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">View</a>
                                 </div>

@@ -36,6 +36,9 @@ require ($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
                 echo "Welcome, " . $firstname . " " . $lastname . '
                 <div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button"
                 style="width: 120px;color: rgb(168,53,101);font-family: "Montserrat Alternates", sans-serif;font-size: 13px;border-radius: 5px;"
+                href="profile.php">View Profile</a>' .
+                    '<div class="d-none d-md-block"><a class="btn btn-light text-center me-2" role="button"
+                style="width: 120px;color: rgb(168,53,101);font-family: "Montserrat Alternates", sans-serif;font-size: 13px;border-radius: 5px;"
                 href="../backend/logout.php">Log out</a>
                 
                 ';
