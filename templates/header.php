@@ -1,6 +1,6 @@
 <?php
 session_start();
-require($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
+require ($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
 ?>
 <section>
     <nav class="navbar navbar-expand-md sticky-top py-3" style="background: #A83565;">
@@ -14,6 +14,8 @@ require($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.php"
                             style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Home</a></li>
+                    <li class="nav-item" style="color: #ffffff;"><a class="nav-link active" href="products.php"
+                            style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Products</a></li>
                     <li class="nav-item" style="color: #ffffff;"><a class="nav-link active" href="product_editor.php"
                             style="font-family: 'Montserrat Alternates', sans-serif;color: #ffffff;">Product
                             Editor</a></li>
