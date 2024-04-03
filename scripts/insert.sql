@@ -103,6 +103,6 @@ VALUES (
   'Example query this is a n example of a very long query which is supposed to be around 65k characters long',
   '2020-01-01',
   '2020-01-01',
-  'Monday'
+  'Monday',
   'unresolved'
 );
