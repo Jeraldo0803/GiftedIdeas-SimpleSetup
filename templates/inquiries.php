@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $userQuery = $_POST["userquery"];
     $inquiryDateString = date("l");  // Gets the full name of the day (Monday, Tuesday, etc.)
+    $inquiryStatus = "unresolved";
 
     $userinquiryQueries = "INSERT INTO UserInquiries (
         userinfo_id,
@@ -21,11 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         userinquiry,
         inquirytime,
         inquirydate,
-        inquirydatestring
-    ) VALUES (?, ?, ?, ?, NOW(), NOW(), ?)";
+        inquirydatestring,
+        inquirystatus
+    ) VALUES (?, ?, ?, ?, NOW(), NOW(), ?, ?)";
 
     $stmt = mysqli_prepare($conn, $userinquiryQueries);
-    mysqli_stmt_bind_param($stmt, "issss", $userInfoId, $name, $email, $userQuery, $inquiryDateString);
+    mysqli_stmt_bind_param($stmt, "isssss", $userInfoId, $name, $email, $userQuery, $inquiryDateString, $inquiryStatus);
     mysqli_stmt_execute($stmt);
 
 }

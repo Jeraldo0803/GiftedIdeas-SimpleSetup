@@ -114,7 +114,7 @@
                         <?php
                         require ($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
                         $conn = get_connection();
-                        $query = "SELECT Id, UserInquiryName, UserInquiryEmail, InquiryTime, InquiryDateString, UserInquiry, InquiryStatus FROM UserInquiries ORDER BY InquiryTime DESC";
+                        $query = "SELECT Id, UserInquiryName, UserInquiryEmail, InquiryTime, InquiryDateString, UserInquiry, InquiryStatus, InquiryReply FROM UserInquiries ORDER BY InquiryTime DESC";
                         $result = mysqli_query($conn, $query);
 
                         if (mysqli_num_rows($result) > 0) {
@@ -125,6 +125,7 @@
                                 $inquiryDateString = $row["InquiryDateString"];
                                 $message = $row["UserInquiry"];
                                 $status = isset($row["InquiryStatus"]) ? $row["InquiryStatus"] : null;
+                                $inquiryreply = $row["InquiryReply"];
 
 
                                 $formattedTimestamp = date("F j, Y, g:i a", strtotime($timestamp));
@@ -159,8 +160,9 @@
                             Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
                             gravida at eget metus.</p><a class="card-link" href="#">remove?</a><a class="card-link"
                             href="#">resolve?</a>
-                        '
-                            ?>
+                        ';
+                        echo $inquiryreply;
+                        ?>
 
                     </div>
                 </div>
