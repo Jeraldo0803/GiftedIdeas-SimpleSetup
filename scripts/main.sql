@@ -56,6 +56,7 @@ CREATE TABLE UserInquiries (
     InquiryTime DATETIME NOT NULL,
     InquiryDate DATETIME NOT NULL,
     InquiryDateString ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') NOT NULL,
+    InquiryStatus ENUM('resolved', 'unresolved') NOT NULL,
     PRIMARY KEY (Id),
     FOREIGN KEY (userinfo_id) REFERENCES UserInfo(Id)
 );
