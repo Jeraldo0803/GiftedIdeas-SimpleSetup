@@ -1,8 +1,22 @@
 <?php
-session_start();
+include ($_SERVER['DOCUMENT_ROOT'] . "/backend/header.php");
+require ($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
 require ($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
-?>
 
+// Include database connection
+$conn = get_connection();
+
+// Retrieve user information from the UserInfo table based on the session variable Id
+$id = $_SESSION['id'];
+$result = mysqli_query($conn, "SELECT * FROM userinfo WHERE Id = '$id'");
+
+
+// Check if user information is found
+if (mysqli_num_rows($result) == 1) {
+    // Fetch user information
+    $userInfo = mysqli_fetch_assoc($result);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,13 +85,12 @@ require ($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
                 <div>
                     <div class="card text-center" style="box-shadow: 1px 4px 20px rgba(0,0,0,0.25);">
                         <div class="card-body" style="padding: 25px 16px;">
-                            <h4 class="card-title" style="font-family: Karla, sans-serif;font-weight: bold;">View User
+                            <h4 class="card-title" style="font-family: Karla, sans-serif;font-weight: bold;">Edit User
                                 Information</h4>
                             <div class="row">
                                 <div class="col">
-                                    <h6 class="mb-2" style="font-size: 13px;font-family: Karla, sans-serif;">Edit Member
-                                    </h6><a class="btn btn-primary" role="button" href="admin_edituser.php"
-                                        style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">View</a>
+                                    <a class="btn btn-primary" role="button" href="edit_profile.php"
+                                        style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Edit</a>
                                 </div>
                             </div>
                         </div>
@@ -94,6 +107,48 @@ require ($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
                         </div>
                     </div>
                 </div>
+                <!-- Display user information -->
+                <ul>
+                    <li>First Name:
+                        <?php echo $userInfo['FirstName']; ?>
+                    </li>
+                    <li>Surname:
+                        <?php echo $userInfo['Surname']; ?>
+                    </li>
+                    <li>Middle Name:
+                        <?php echo $userInfo['MiddleName']; ?>
+                    </li>
+                    <li>Place of Birth:
+                        <?php echo $userInfo['PlaceofBirth']; ?>
+                    </li>
+                    <li>Gender:
+                        <?php echo $userInfo['Gender']; ?>
+                    </li>
+                    <li>Nationality:
+                        <?php echo $userInfo['Nationality']; ?>
+                    </li>
+                    <li>Civil Status:
+                        <?php echo $userInfo['CivilStatus']; ?>
+                    </li>
+                    <li>Mobile Number:
+                        <?php echo $userInfo['MobileNumber']; ?>
+                    </li>
+                    <li>Email Address:
+                        <?php echo $userInfo['EmailAddress']; ?>
+                    </li>
+                    <li>Landline:
+                        <?php echo $userInfo['Landline']; ?>
+                    </li>
+                    <li>Home Address:
+                        <?php echo $userInfo['HomeAddress']; ?>
+                    </li>
+                    <li>District/Barangay:
+                        <?php echo $userInfo['DistrictBarangay']; ?>
+                    </li>
+                    <li>Municipality/City:
+                        <?php echo $userInfo['MunicipalityCity']; ?>
+                    </li>
+                </ul>
             </div>
             <div class="col-5">
                 <div></div>

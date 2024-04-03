@@ -1,11 +1,13 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . "/backend/common.php");
+require ($_SERVER['DOCUMENT_ROOT'] . "/backend/common.php");
 check_admin_auth();
+require ($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_user"])) {
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve edited user information
-    $userid = $_POST["user_id"];
+    $userid = $_POST["userid"];
     $firstname = $_POST["firstname"];
     $middlename = $_POST["middlename"];
     $surname = $_POST["surname"];
@@ -35,9 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_user"])) {
         MunicipalityCity = ?
         WHERE Id = ?";
 
+    $conn = get_connection();
     $stmt = mysqli_prepare($conn, $updateQuery);
     mysqli_stmt_bind_param($stmt, "ssssssssssssi", $firstname, $middlename, $surname, $gender, $nationality, $placeofbirth, $civilstatus, $contactemail, $landline, $homeaddress, $districtbarangay, $municipalitycity, $userid);
     mysqli_stmt_execute($stmt);
+
 
     header("Location: /templates/admin.php");
     exit();
@@ -66,9 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_user"])) {
     <div data-include="templates/header"></div>
 
     <h2>Edit User Information</h2>
-    <form action="edit_user.php" method="POST">
-        <label for="userId">User ID:</label>
-        <input type="text" id="userId" name="userId" required><br><br>
+    <form action="#" method="POST">
+        <label for="userid">User ID:</label>
+        <input type="text" id="userid" name="userid" required><br><br>
         <label for="firstname">First Name:</label>
         <input type="text" id="firstname" name="firstname" required><br><br>
         <label for="middlename">Middle Name:</label>

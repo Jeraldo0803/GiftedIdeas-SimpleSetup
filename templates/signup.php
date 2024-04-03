@@ -1,6 +1,6 @@
 <?php
 session_start();
-require($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
+require ($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
 $conn = get_connection();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
