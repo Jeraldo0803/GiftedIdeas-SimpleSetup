@@ -27,8 +27,8 @@
                     <h2 style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Products</h2>
                 </div>
                 <div class="col-xl-1">
-                    <div class="dropdown show"><button class="btn btn-light dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" type="button">Sort by</button>
-                        <div class="dropdown-menu show" data-bs-popper="none"><a class="dropdown-item" onclick="sortasc()"><button class="btn btn-light" type="button" onclick="sortasc()">Sort A-Z</button></a><a class="dropdown-item"><button class="btn" type="button" onclick="sortdesc()">Sort Z-A</button></a></div>
+                    <div class="dropdown"><button class="btn btn-light dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Sort by</button>
+                        <div class="dropdown-menu"><a class="dropdown-item" onclick="sortasc()"><button class="btn btn-light" type="button" onclick="sortasc()">Sort A-Z</button></a><a class="dropdown-item"><button class="btn" type="button" onclick="sortdesc()">Sort Z-A</button></a></div>
                     </div>
                 </div>
             </div>
