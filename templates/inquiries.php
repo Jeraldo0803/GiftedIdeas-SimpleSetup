@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
-require($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
+include ($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
+require ($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
 $conn = get_connection();
 
 
@@ -69,8 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         placeholder="Name"></div>
                                 <div class="mb-3"><input class="form-control" type="email" id="email-2" name="email"
                                         placeholder="Email"></div>
-                                <div class="mb-3"><textarea class="form-control" id="message-2" name="userquery"
-                                        rows="6" placeholder="Message"></textarea></div>
+                                <div class="mb-3"><textarea class="form-control" type="text" id="message-2"
+                                        name="userquery" rows="6" placeholder="Message"></textarea></div>
                                 <div class="d-flex justify-content-center"><button class="btn btn-primary d-block w-100"
                                         type="submit"
                                         style="border-radius: 16px;border-width: 4px;border-color: #A83565;color: #A83565;font-family: Karla, sans-serif;font-size: 14px;max-width: 248px;background: var(--bs-btn-disabled-color);">Send
@@ -89,6 +89,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="../assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery.js"></script>
     <script src="/src/global.js"></script>
+    <script>
+        function validateForm() {
+            // Get all input elements
+            var inputs = document.querySelectorAll('input[type="text"], input[type="email"]');
+
+            // Check if all input values are filled
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].value === "") {
+                    alert("Please fill in all fields.");
+                    return false; // Prevent form submission
+                }
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
 </body>
 
 </html>
