@@ -1,3 +1,7 @@
+<?php
+include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
+?>
+
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
