@@ -1,6 +1,6 @@
 <?php
 session_start();
-include($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
 ?>
 
 <!DOCTYPE html>
@@ -67,44 +67,6 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
                         class="btn btn-primary btn-lg d-xxl-flex justify-content-xxl-center align-items-xxl-center me-2"
                         role="button" href="about.php"
                         style="width: 140px;background: #a83565;border-radius: 5px;font-size: 15px;">Learn more</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container py-4 py-xl-5">
-        <div class="row mb-5">
-            <div class="col-12 text-center mx-auto" style="margin-bottom: 35px;">
-                <h2 class="fw-bold text-start" style="font-family: 'Montserrat Alternates', sans-serif;">Testimonials
-                </h2>
-            </div>
-        </div>
-        <div class="row row-cols-2 justify-content-xxl-center">
-            <div class="col">
-                <div class="d-flex" style="margin-bottom: 40px;"><img
-                        class="rounded-circle flex-shrink-0 me-3 fit-cover"
-                        src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" width="200" height="200"></div>
-                <div>
-                    <p class="fw-bold text-primary mb-0">John Smith</p>
-                    <p class="text-muted mb-0">Erat netus</p>
-                    <p class="bg-body-tertiary border rounded border-0 p-4"
-                        style="font-family: 'Montserrat Alternates', sans-serif;">Service is great!</p><a
-                        class="btn btn-primary btn-lg d-xxl-flex justify-content-xxl-center align-items-xxl-center me-2"
-                        role="button" href="testimonials.php"
-                        style="width: 140px;background: #a83565;font-size: 15px;">Learn more</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="d-flex" style="margin-bottom: 40px;"><img
-                        class="rounded-circle flex-shrink-0 me-3 fit-cover"
-                        src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" width="200" height="200"></div>
-                <div>
-                    <p class="fw-bold text-primary mb-0">John Smith</p>
-                    <p class="text-muted mb-0">Erat netus</p>
-                    <p class="bg-body-tertiary border rounded border-0 p-4"
-                        style="font-family: 'Montserrat Alternates', sans-serif;">Service is great!</p><a
-                        class="btn btn-primary btn-lg d-xxl-flex justify-content-xxl-center align-items-xxl-center me-2"
-                        role="button" href="testimonials.php"
-                        style="width: 140px;background: #a83565;font-size: 15px;">Learn more</a>
                 </div>
             </div>
         </div>
