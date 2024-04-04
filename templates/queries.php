@@ -140,6 +140,7 @@
                                     if (isset($row["Id"])) {
                                         echo '<a class="card-link" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">remove</a>';
                                         echo '<a class="card-link" href="../backend/resolve_inquiry.php?id=' . $row["Id"] . '">resolve</a>';
+                                        echo '<a class="card-link" href="../backend/reply_inquiry.php?id=' . $row["Id"] . '">reply?</a>';
                                     } else {
                                         echo "Error: Inquiry ID not found.";
                                     }
