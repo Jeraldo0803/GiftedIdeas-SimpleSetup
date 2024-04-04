@@ -48,8 +48,8 @@ require ($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
             style="width: 120px;color: rgb(168,53,101);font-family: "Montserrat Alternates", sans-serif;font-size: 13px;border-radius: 5px;"
             href="login.php">Log in</a>
             
-            <a class="btn btn-primary" role="button" href="signup.php"
-            style="font-family: "Montserrat Alternates", sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a>
+            <a class="btn btn-light" role="button" href="signup.php"
+            style="background: #cc5d8c;color: #ffffff; font-family: "Montserrat Alternates", sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Register</a>
             </div>
             ';
             }
