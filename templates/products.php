@@ -1,5 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
+session_start();
+include($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
 ?>
 
 <!DOCTYPE html>
@@ -96,6 +97,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
             </div>
         </div>
     </section>
+	
+    <div data-include="templates/footer"></div>
 	<script>
 	function sortasc(){    
 	var main = document.getElementById( 'main' );
@@ -123,6 +126,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
     <script src="../assets/js/FileSaver.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
     <script src="../assets/js/Lightbox-Gallery.js"></script>
+    <script src="/src/global.js"></script>
 </body>
 
 </html>

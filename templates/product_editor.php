@@ -1,5 +1,5 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
 ?>
 
 <!DOCTYPE html>
