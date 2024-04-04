@@ -85,9 +85,111 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
                             </div>
                         </div>
                     </div>
-
+			
                     <p id="editp">To remove a loaded picture on the T-Shirt select it and press the <kbd>DEL</kbd> key.
                     </p>
+					
+					<!--text change
+					<button id="add" type="button">Insert Text</button>
+					<select class="select2 font-change" data-type="fontFamily">
+					  <option value="Arial">Arial</option>
+					  <option value="Arial Black">Arial Black</option>
+					  <option value="Impact">Impact</option>
+					  <option value="Tahoma">Tahoma</option>
+					  <option value="Times New Roman">Times New Roman</option>
+					</select>
+					<select class="select2 font-change" data-type="fontSize">
+					  <option value="10">XXS</option>
+					  <option value="20">XS</option>
+					  <option value="30">S</option>
+					  <option value="40">M</option>
+					  <option value="50">L</option>
+					  <option value="60">XL</option>
+					  <option value="70">XXL</option>
+					  <option value="80">XXXL</option>
+					</select>
+					
+					<input type="color" id="colorpicker" class="select2 font-change" data-type="color" value="#000000" data-jscolor=""/>
+					
+					<select class="select2 font-change" data-type="textAlign">
+					  <option value="left">left</option>
+					  <option value="center">center</option>
+					  <option value="right">right</option>
+					</select>
+					-->
+					
+					<div id="text-controls">
+
+					  <h4>Options</h4>
+					   <button onclick="Addtext()">Add Text</button>
+					  <div class="input-field">
+						<select id="font-family">
+						  <option value="sans-serif" selected>Sans serif</option>
+						  <option value="serif">Serif</option>
+						  <option value="monospace">Monospace</option>
+						</select>
+						<label>Font Family</label>
+					  </div>
+
+					  <div class="input-field color-pick">
+						<input type="color" placeholder="Text color" id="text-color" size="10" value='#000'>
+						<label for='text-color'>Text color <label>
+					  </div>
+					<div class="input-field">
+						<select id="text-align">
+								<option value="left" selected>Left</option>
+								<option value="center">Center</option>
+								<option value="right">Right</option>
+								<option value="justify">Justify</option>
+							</select>
+					  <label for='text-align'>Text align</label>
+					  </div>
+						  <div class="input-field color-pick">
+							<label for="text-font-size">Font Size</label>
+							<input type="range" min="12" max="120" step="1" value='45' id="text-font-size">
+							
+						  </div>
+					  
+						<div class="input-field color-pick">
+							<label for="text-line-height">Line Height</label>
+							<input type="range" min="0" max="10" step="0.1" id="text-line-height">
+						</div>
+						 <p>
+						  <label>
+							<input type="checkbox" name='fonttype' id="text-cmd-bold"/>
+							<span>Bold</span>
+						  </label>
+						</p>
+						  <p>
+						  <label>
+							<input type='checkbox' name='fonttype' id="text-cmd-italic">
+							<span>Italic</span>
+						  </label>
+						</p>
+					  <p>
+						  <label>
+							<input type='checkbox' name='fonttype' id="text-cmd-underline">
+							<span>Underline</span>
+						  </label>
+						</p>
+					   
+						 <p>
+						  <label>
+							<input type='checkbox' name='fonttype' id="text-cmd-linethrough">
+							<span>Linethrough</span>
+						  </label>
+						</p>
+						  <p>
+						  <label>
+							<input type='checkbox' name='fonttype' id="text-cmd-overline">
+							<span>Overline</span>
+						  </label>
+						</p>
+
+					</div>
+					
+					<hr>
+					
                     <!-- The select that will allow the user to pick one of the static designs -->
                     <label for="tshirt-design">T-Shirt Design:</label>
                     <select id="tshirt-design">
@@ -120,7 +222,27 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
                                 canvas.renderAll();
                             });
                         }
+						
+						//WATERMARK
+						fabric.Image.fromURL("../assets/img/logo.png", function (img) {
+                                img.scaleToHeight(150);
+                                img.scaleToWidth(150);
+                                canvas.add(img);
+								canvas.item(0).selectable = false;
+								canvas.item(0).top=300;
+								canvas.item(0).left=280;
+                            });
+							
+							
+						//text
+						//canvas.add(new fabric.IText('Tap and Type', { 
+						//  fontFamily: 'arial black',
+						//  left: 100, 
+						//  top: 100 ,
+						//}));
 
+						
+						
                         // Update the TShirt according to the selected dropdown by the user
                         document.getElementById("tshirt-design").addEventListener("click", function () {
 
@@ -167,7 +289,176 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
                         }, false);
 
                     </script>
+					
+					<!--script>
+					//Special script function to be called (text box) aaaaaa
+					var appObject = function() {
 
+					  return {
+						__canvas: canvas,
+						__tmpgroup: {},
+
+						addText: function() {
+						  var newID = (new Date()).getTime().toString().substr(5);
+						  var text = new fabric.IText('Your Text Here', {
+							fontFamily: 'arial',
+							top: 200,
+							left: 80,
+							myid: newID,
+							objecttype: 'text'
+						  });
+
+						  this.__canvas.add(text);
+						  this.addLayer(newID, 'text');
+						},
+						setTextParam: function(param, value) {
+						  var obj = this.__canvas.getActiveObject();
+						  if (obj) {
+							if (param == 'color') {
+							  obj.set('fill', this.value);
+							} else {
+							  obj.set(param, value);
+							}
+							this.__canvas.renderAll();
+						  }
+						},
+						setTextValue: function(value) {
+						  var obj = this.__canvas.getActiveObject();
+						  if (obj) {
+							obj.setText(value);
+							this.__canvas.renderAll();
+						  }
+						},
+						addLayer: function() {
+
+						}
+
+					  };
+					}
+					
+
+					$(document).ready(function() {
+
+					  var app = appObject();
+
+					  $('.font-change').change(function(event) {
+						app.setTextParam($(this).data('type'), $(this).find('option:selected').val());
+					  });
+
+					  $('#add').click(function() {
+						app.addText();
+					  });
+
+					})					
+					</script-->
+					
+					
+					<script>
+					function Addtext() { 
+					canvas.add(
+						new fabric.Textbox("Start Typing...", {
+							left: 50,
+							top: 100,
+							fontFamily: "sans-serif",
+							fill: "#000",
+							fontSize: 45,
+							fixedWidth: 300,
+						width:300
+						})
+					);
+					}
+					
+
+					// canvas.on('text:changed', (event) => {
+					//       var textLabel = event.target;
+					//       if (textLabel.width > textLabel.fixedWidth) {
+					//         textLabel.fontSize *= textLabel.fixedWidth / (textLabel.width + 1);
+					//         textLabel.width = textLabel.fixedWidth;
+					//       }
+					//       canvas.renderAll();
+					//     });
+
+					// Edit Text
+					document.getElementById("text-color").addEventListener("change", (event) => {
+						canvas.getActiveObject().set("fill", event.target.value);
+						canvas.renderAll();
+					});
+					document.getElementById("font-family").addEventListener("change", (event) => {
+						canvas.getActiveObject().set("fontFamily", event.target.value);
+						canvas.renderAll();
+					});
+					document
+						.getElementById("text-font-size")
+						.addEventListener("change", (event) => {
+							canvas.getActiveObject().set("fontSize", event.target.value);
+							canvas.renderAll();
+						});
+					document
+						.getElementById("text-line-height")
+						.addEventListener("change", (event) => {
+							canvas.getActiveObject().set("lineHeight", event.target.value);
+							canvas.renderAll();
+						});
+					document.getElementById("text-align").addEventListener("change", (event) => {
+						canvas.getActiveObject().set("textAlign", event.target.value);
+						canvas.renderAll();
+					});
+
+					var fontTypeProps = document.getElementsByName("fonttype");
+
+					for (var i = 0, max = fontTypeProps.length; i < max; i += 1) {
+						fontTypeProps[i].onclick = function () {
+							var canvasActiveObj = canvas.getActiveObject();
+							if (document.getElementById(this.id).checked == true) {
+								if (this.id === "text-cmd-bold") {
+									canvasActiveObj.set("fontWeight", "bold");
+								}
+								if (this.id === "text-cmd-italic") {
+									canvasActiveObj.set("fontStyle", "italic");
+								}
+								if (this.id === "text-cmd-underline") {
+									canvasActiveObj.set("underline", true);
+								}
+								if (this.id === "text-cmd-linethrough") {
+									canvasActiveObj.set("linethrough", true);
+								}
+								if (this.id === "text-cmd-overline") {
+									canvasActiveObj.set("overline", true);
+								}
+							} else {
+								if (this.id === "text-cmd-bold") {
+									canvasActiveObj.set("fontWeight", "");
+								}
+								if (this.id === "text-cmd-italic") {
+									canvasActiveObj.set("fontStyle", "");
+								}
+								if (this.id === "text-cmd-underline") {
+									canvasActiveObj.set("underline", false);
+								}
+								if (this.id === "text-cmd-linethrough") {
+									canvasActiveObj.set("linethrough", false);
+								}
+								if (this.id === "text-cmd-overline") {
+									canvasActiveObj.set("overline", false);
+								}
+							}
+							canvas.renderAll();
+							console.info(canvasActiveObj);
+						};
+					}
+
+					// Do some initializing stuff
+					fabric.Object.prototype.set({
+						transparentCorners: true,
+						cornerColor: "#22A7F0",
+						borderColor: "#22A7F0",
+						cornerSize: 12,
+						padding: 5
+					});
+
+					</script>
+					
+					
                     <script>
                         //for switching products
                         document.getElementById("product1").onclick = function () { product1() };
@@ -333,12 +624,15 @@ include($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
                                 </a></div>
                         </div>
                     </div>
+					
+					
                 </section>
             </div>
         </div>
     </div>
 
     <div data-include="templates/footer"></div>
+    <script src="../assets/bootstrap/js/jscolor.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/dom-to-image.min.js"></script>
     <script src="../assets/js/fabric.min.js"></script>
