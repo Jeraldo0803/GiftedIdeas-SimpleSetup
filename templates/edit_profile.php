@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                     <div class="row gx-5 gy-3">
                                         <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">First Name</p><input class="form-control" type="text" name="firstname" value="<?php echo $userInfo['FirstName']; ?>" />
+                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">First Name</p><input class="form-control" type="text" name="firstname" value="<?php echo $userInfo['FirstName']; ?>" required/>
                                             <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Middle Name</p><input class="form-control" type="text" name="middlename" value="<?php echo $userInfo['MiddleName']; ?>" />
                                             <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Nationality</p><input class="form-control" type="text" name="nationality" value="<?php echo $userInfo['Nationality']; ?>"  />
                                             <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Civil Status</p><input class="form-control" type="text" name="civilstatus" value="<?php echo $userInfo['CivilStatus']; ?>"  />
@@ -140,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Email Address</p><input class="form-control" type="text" name="emailaddress" value="<?php echo $userInfo['EmailAddress']; ?>" required />
                                         </div>
                                         <div class="col">
-                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Last Name</p><input class="form-control" type="text" name="surname" value="<?php echo $userInfo['Surname']; ?>"  />
+                                            <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Last Name</p><input class="form-control" type="text" name="surname" value="<?php echo $userInfo['Surname']; ?>"  required/>
                                             <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Gender<input class="form-control" type="text" name="gender" value="<?php echo $userInfo['Gender']; ?>"  /></p>
                                             <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Place of Birth</p><input class="form-control" type="text" name="placeofbirth" value="<?php echo $userInfo['PlaceOfBirth']; ?>"  />
                                             <p class="text-start" style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">Home Address</p><input class="form-control" type="text" name="homeaddress" value="<?php echo $userInfo['HomeAddress']; ?>"  />
@@ -152,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <div></div>
                                     </div>
                                 </div>
-                                <div class="d-xl-flex d-xxl-flex justify-content-xl-center justify-content-xxl-center mb-3"><a class="btn btn-primary btn-light" role="button" href="profile.php" style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Cancel</a>
+                                <div class="d-xl-flex d-xxl-flex justify-content-xl-center justify-content-xxl-center mb-3"><a class="btn btn-primary btn-light" role="button" href="admin.php" style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Cancel</a>
 								
 								<input type="submit" value="Submit" class="btn btn-primary" role="button" href="edit_profile.php" style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;margin-left:20px;"/></div>
                             </form>

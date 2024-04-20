@@ -26,10 +26,7 @@
                     <div class="row text-center">
                         <div class="col">
                             <div class="row">
-                                <div class="col" style="margin-top: 10vmax;margin-bottom: 15px;"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                                        viewBox="0 0 16 16" class="bi bi-person-circle"
-                                        style="min-height: 10vmax;min-width: 10vmax;">
+                                <div class="col" style="margin-top: 10vmax;margin-bottom: 15px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-circle" style="min-height: 10vmax;min-width: 10vmax;">
                                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
                                         <path fill-rule="evenodd"
                                             d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1">
@@ -38,15 +35,14 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <h1
-                                        style="font-family: 'Montserrat Alternates', sans-serif;font-size: 20px;font-weight: bold;margin-bottom: 0px;">
+                                    <h1 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 20px;font-weight: bold;margin-bottom: 0px;">
                                         Admin Name</h1>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <h1 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 15px;">Admin
-                                        Position</h1>
+                                    <h1 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 15px;">Admin Position
+                                    </h1>
                                 </div>
                             </div>
                             <div class="row">
@@ -67,14 +63,9 @@
                                 Information</h4>
                             <div class="row">
                                 <div class="col">
-                                    <h6 class="justify-content-xl-center align-items-xl-center mb-2"
-                                        style="font-size: 13px;font-family: Karla, sans-serif;">New Registration</h6><a
-                                        class="btn btn-primary" role="button"
-                                        style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">View</a>
-                                </div>
-                                <div class="col">
                                     <h6 class="mb-2" style="font-size: 13px;font-family: Karla, sans-serif;">Edit Member
-                                    </h6><a class="btn btn-primary" role="button"
+                                        Information
+                                    </h6><a class="btn btn-primary" role="button" href="admin_edituser.php"
                                         style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">View</a>
                                 </div>
                             </div>
@@ -85,14 +76,15 @@
                         <div class="card-body" style="padding: 25px 16px;">
                             <h4 class="card-title" style="font-family: Karla, sans-serif;font-weight: bold;">User
                                 Activities</h4><a class="btn btn-primary" role="button"
-                                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;margin-bottom: 10px;">View
+                                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;margin-bottom: 10px;"
+                                href="queries.php">View
                                 Queries</a><a class="btn btn-primary" role="button"
                                 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;">View</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-5"><a href="admin.php" style="padding-bottom: 0px;padding-top: 0px;padding-right: 0px;"><svg
+            <div class="col-5 overflow-auto" style="max-height: 84vmin;padding-right:35px;"><a href="admin.php" style="padding-bottom: 0px;padding-top: 0px;padding-right: 0px;"><svg
                         xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
                         viewBox="0 0 16 16" class="bi bi-x-square text-muted"
                         style="font-size: 30px;margin-top: 7px;margin-bottom: 11px;">
@@ -108,10 +100,7 @@
                     <hr>
                 </div>
                 <!--Just use this whole card div for showing message-->
-                <div class="card">
-                    <div class="card-body">
-
-                        <?php
+				<?php
                         require ($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
                         $conn = get_connection();
                         $query = "SELECT Id, UserInquiryName, UserInquiryEmail, InquiryTime, InquiryDateString, UserInquiry, InquiryStatus, InquiryReply FROM UserInquiries ORDER BY InquiryTime DESC";
@@ -129,8 +118,18 @@
 
 
                                 $formattedTimestamp = date("F j, Y, g:i a", strtotime($timestamp));
-
-                                echo '<div class="card">';
+								
+								if ($status == "unresolved") {
+                                    // Check if "id" key exists in $row array before using it
+                                    if (isset($row["Id"])) {
+                                        echo '<div class="card" style="margin-bottom:20px;">';
+                                    } else {
+                                        echo "Error: Inquiry ID not found.";
+                                    }
+                                } else {
+                                    echo '<div class="card" style="border-width: 2px;border-color: var(--bs-green);margin-bottom:20px;">';
+                                }
+								echo '<div class="card-body">';
                                 echo '<h4 class="card-title">' . $senderName . ' / ' . $senderEmail . '</h4>';
                                 echo '<h6 class="text-muted card-subtitle mb-2">' . $formattedTimestamp . '</h6>';
                                 echo '<p class="card-text">' . $message . '</p>';
@@ -138,39 +137,48 @@
                                 if ($status == "unresolved") {
                                     // Check if "id" key exists in $row array before using it
                                     if (isset($row["Id"])) {
-                                        echo '<a class="card-link" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">remove</a>';
-                                        echo '<a class="card-link" href="../backend/resolve_inquiry.php?id=' . $row["Id"] . '">resolve</a>';
-                                        echo '<a class="card-link" href="../backend/reply_inquiry.php?id=' . $row["Id"] . '">reply?</a>';
+                                        echo '<a class="btn btn-outline-success" href="../backend/resolve_inquiry.php?id=' . $row["Id"] . '">Resolve</a>';
+                                        echo '<a class="btn btn-outline-warning" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">Remove</a>';
+                                        echo '<a class="card-link" href="../backend/reply_inquiry.php?id=' . $row["Id"] . '">Reply</a>';
                                     } else {
                                         echo "Error: Inquiry ID not found.";
                                     }
                                 } else {
-                                    echo '<a class="card-link" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">remove</a>';
-                                    echo '<p class="text-success">Resolved</p>';
+                                    echo '<span class=" text-success fw-bold" style="margin-right:10px;margin-left:5px">Resolved</span>';
+                                    echo '<a class="btn btn-outline-warning" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">Remove Inquiry</a>';
                                 }
-                                echo '</div>';
+                                echo '</div></div>';
                             }
                         } else {
                             echo "No inquiries found.";
                         }
 
                         echo '
+						<div class="card" style="margin-bottom:20px;">
+						<div class="card-body">
                         <h4 class="card-title">Sender name / email</h4>
                         <h6 class="text-muted card-subtitle mb-2">timestamp</h6>
                         <p class="card-text">Message bla bla bla Nullam id dolor id nibh ultricies vehicula ut id elit.
                             Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                            gravida at eget metus.</p><a class="card-link" href="#">remove?</a><a class="card-link"
-                            href="#">resolve?</a>
-                        ';
-                        echo $inquiryreply;
+                            gravida at eget metus.</p>
+						<a class="btn btn-outline-success" href="#">Resolve</a>
+						<a class="btn btn-outline-warning" href="#">Remove</a>
+						<a class="btn btn-link" href="#inputForm" data-bs-toggle="collapse">Reply</a>
+						<div class="collapse" id="inputForm">
+						<form>
+							<div class="mb-4" style="margin-top:10px;">
+								<textarea class"" placeholder="Reply here..."></textarea>
+								<input type="submit" value="Submit">
+							</div>
+						</form>
+						</div>
+						</div>
+						</div>
+                        '
                         ?>
-
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    <div data-include="templates/footer"></div>
+    </div>
+    </div>
 
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/dom-to-image.min.js"></script>

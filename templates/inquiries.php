@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         placeholder="Email"></div>
                                 <div class="mb-3"><textarea class="form-control" type="text" id="message-2"
                                         name="userquery" rows="6" placeholder="Message"></textarea></div>
+								<input type="file" />
                                 <div class="d-flex justify-content-center"><button class="btn btn-primary d-block w-100"
                                         type="submit"
                                         style="border-radius: 16px;border-width: 4px;border-color: #A83565;color: #A83565;font-family: Karla, sans-serif;font-size: 14px;max-width: 248px;background: var(--bs-btn-disabled-color);">Send
