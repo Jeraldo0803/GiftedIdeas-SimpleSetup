@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-6">
                 <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;"
-                        src="../assets/img/logo1.png"></div>
+                        src="../assets/img/homepageabout.jpg"></div>
             </div>
         </div>
     </div>

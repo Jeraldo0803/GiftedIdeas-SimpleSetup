@@ -58,7 +58,7 @@ include ($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
     <div class="container py-4 py-xl-5">
         <div class="row gy-4 gy-md-0">
             <div class="col-md-6"><img class="rounded img-fluid w-100 fit-cover"
-                    src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" style="min-height: 300px;"></div>
+                    src="../assets/img/homepageabout.jpg" style="min-height: 300px;"></div>
             <div class="col-md-6 d-md-flex align-items-md-center"
                 style="font-family: 'Montserrat Alternates', sans-serif;">
                 <div style="max-width: 350px;">
