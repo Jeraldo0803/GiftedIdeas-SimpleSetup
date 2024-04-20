@@ -37,7 +37,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
 				</a>
 				<a class="btn btn-light text-center me-2" role="button" style="width: 120px;color: rgb(168,53,101);font-family: "Montserrat Alternates", sans-serif;font-size: 13px;border-radius: 5px;" href="profile.php">View Profile</a>
                 
-				<a class="btn btn-light text-center me-2" role="button"
+				<a class="btn btn-light text-center me-2" role="button" href="../backend/logout.php"
                 style="background: #cc5d8c;color: #ffffff; font-family: "Montserrat Alternates", sans-serif;font-size: 13px;background: #F44D92;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">Log out</a>
                 ';
             } else {
