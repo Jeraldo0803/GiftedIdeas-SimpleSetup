@@ -2,6 +2,7 @@
     <footer class="text-white" style="font-family: 'Montserrat Alternates', sans-serif;background: #a83565;">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
+			<!--
                 <div
                     class="col-sm-4 col-md-4 col-lg-4 col-xxl-3 text-center text-lg-start d-flex flex-column order-first item">
                     <img>
@@ -29,6 +30,7 @@
                 </div>
             </div>
             <hr>
+			-->
             <div class="d-flex justify-content-between align-items-center pt-3">
                 <p class="mb-0">Copyright © 2024 Gifted Ideas</p>
                 <ul class="list-inline mb-0">
