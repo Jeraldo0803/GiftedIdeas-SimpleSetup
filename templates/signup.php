@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_execute($stmt);
 
     // USER HISTORY QUERY
-    $userHistoryQuery = "INSERT INTO UserHistory (userinfo_id, Action, Title, Time, Date, Day_string) VALUES (?, 'Login', 'Member logged in', NOW(), NOW(), '')";
+    $userHistoryQuery = "INSERT INTO UserHistory (userinfo_id, Action, Title, Time, Date, Day_string) VALUES (?, 'Login', 'Member signed up', NOW(), NOW(), '')";
 
     $stmt = mysqli_prepare($conn, $userHistoryQuery);
     mysqli_stmt_bind_param($stmt, "i", $userInfoId);
