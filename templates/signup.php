@@ -145,7 +145,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <!--<p class="text-start"
                                                 style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
                                                 Gender</p><input class="form-control" type="text" name="gender">-->
-                                            <select name="gender" id="gender" class="text-start"
+                                            <p class="text-start"
+                                                style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
+                                                Gender</p>
+											<select name="gender" id="gender" class="form-select"
                                                 style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
                                                 <option value="">-Select Gender-</option>
                                                 <option value="Male">Male</option>
