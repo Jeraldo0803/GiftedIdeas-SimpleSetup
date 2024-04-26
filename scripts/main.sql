@@ -15,7 +15,7 @@ CREATE TABLE UserInfo (
     Gender ENUM('Male','Female','Prefer not to say') NULL,
     Nationality VARCHAR(255) NULL,
     CivilStatus VARCHAR(255) NULL,
-    MobileNumber VARCHAR(255) NULL,
+    MobileNumber VARCHAR(255) NULL, 
     EmailAddress VARCHAR(255) NULL,
     Landline VARCHAR(255) NULL,
     HomeAddress VARCHAR(255) NULL,
@@ -57,6 +57,8 @@ CREATE TABLE UserInquiries (
     InquiryDate DATETIME NOT NULL,
     InquiryDateString ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') NOT NULL,
     InquiryStatus ENUM('resolved', 'unresolved') NOT NULL,
+    InquiryReply TEXT NULL,
+    InquiryAttachment VARCHAR(255) NULL,
     PRIMARY KEY (Id),
     FOREIGN KEY (userinfo_id) REFERENCES UserInfo(Id)
 );

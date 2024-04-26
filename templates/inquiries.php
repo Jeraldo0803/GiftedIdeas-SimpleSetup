@@ -1,19 +1,43 @@
 <?php
 include ($_SERVER['DOCUMENT_ROOT'] . '/backend/header.php');
 require ($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
+require ($_SERVER['DOCUMENT_ROOT'] . '/backend/retrieve_userinfo.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/backend/get_names.php');
 $conn = get_connection();
 
+$first_name = get_firstname($_SESSION["id"]);
+$last_name = get_lastname($_SESSION["id"]);
+
+$session_name = "$first_name " . "$last_name";
 
 // Check if the user is logged in
 if (isset($_SESSION['id'])) {
-    $userInfoId = $_SESSION['id'];
+    $userInfoId = getUserInfoIdFromSession($conn, $_SESSION['id']);
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $session_email = $_SESSION["email"];
     $name = $_POST["name"];
     $email = $_POST["email"];
     $userQuery = $_POST["userquery"];
     $inquiryDateString = date("l");  // Gets the full name of the day (Monday, Tuesday, etc.)
     $inquiryStatus = "unresolved";
+    // Handle file upload if a file was provided
+    if (isset($_FILES['userfile']) && $_FILES['userfile']['error'] === UPLOAD_ERR_OK) {
+        $fileTmpPath = $_FILES['userfile']['tmp_name'];
+        $fileName = $_FILES['userfile']['name'];
+
+        // Move the uploaded file to a desired location
+        $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/';
+        $uploadFile = $uploadDir . basename($fileName);
+        move_uploaded_file($fileTmpPath, $uploadFile);
+
+        // Now, insert the file path or reference into the database instead of $userfile
+        $userfile = '/uploads/' . $fileName; // Assuming you're storing the file path
+    } else {
+        // Handle case where no file was uploaded
+        $userfile = null; // or whatever default value you want to use
+    }
+
 
     $userinquiryQueries = "INSERT INTO UserInquiries (
         userinfo_id,
@@ -23,11 +47,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         inquirytime,
         inquirydate,
         inquirydatestring,
-        inquirystatus
-    ) VALUES (?, ?, ?, ?, NOW(), NOW(), ?, ?)";
+        inquirystatus,
+        inquiryattachment
+    ) VALUES (?, ?, ?, ?, NOW(), NOW(), ?, ?, '$userfile')";
 
     $stmt = mysqli_prepare($conn, $userinquiryQueries);
-    mysqli_stmt_bind_param($stmt, "isssss", $userInfoId, $name, $email, $userQuery, $inquiryDateString, $inquiryStatus);
+    mysqli_stmt_bind_param($stmt, "isssss", $userInfoId, $session_name, $session_email, $userQuery, $inquiryDateString, $inquiryStatus);
+    mysqli_stmt_execute($stmt);
+
+    // USER HISTORY QUERY
+    $userHistoryQuery = "INSERT INTO UserHistory (userinfo_id, Action, Title, Time, Date, Day_string) VALUES (?, 'Member Inquiry', 'Member has sent an Inquiry', NOW(), NOW(), DAYNAME(NOW()))";
+
+    $stmt = mysqli_prepare($conn, $userHistoryQuery);
+    mysqli_stmt_bind_param($stmt, "i", $userInfoId);
     mysqli_stmt_execute($stmt);
 
 }
@@ -65,15 +97,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <h2 class="text-center mb-4"
                                 style="font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;">Customer
                                 Inquiry</h2>
-                            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
-                                onsubmit="return validateForm()">
-                                <div class="mb-3"><input class="form-control" type="text" id="name-2" name="name"
+                            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"
+                                enctype="multipart/form-data" onsubmit="return validateForm()">
+                                <!--<div class="mb-3"><input class="form-control" type="text" id="name-2" name="name"
                                         placeholder="Name"></div>
                                 <div class="mb-3"><input class="form-control" type="email" id="email-2" name="email"
-                                        placeholder="Email"></div>
+                                        placeholder="Email"></div>-->
                                 <div class="mb-3"><textarea class="form-control" type="text" id="message-2"
                                         name="userquery" rows="6" placeholder="Message"></textarea></div>
-								<input type="file" />
+                                <input type="file" name="userfile" accept=".png, .jpg, .jpeg" />
                                 <div class="d-flex justify-content-center"><button class="btn btn-primary d-block w-100"
                                         type="submit"
                                         style="border-radius: 16px;border-width: 4px;border-color: #A83565;color: #A83565;font-family: Karla, sans-serif;font-size: 14px;max-width: 248px;background: var(--bs-btn-disabled-color);">Send

@@ -1,3 +1,10 @@
+<?php
+require ($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
+include ($_SERVER['DOCUMENT_ROOT'] . "/backend/header.php");
+require ($_SERVER['DOCUMENT_ROOT'] . "/backend/get_names.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/backend/retrieve_userinfo.php");
+$conn = get_connection();
+?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -40,13 +47,15 @@
                                 <div class="col">
                                     <h1
                                         style="font-family: 'Montserrat Alternates', sans-serif;font-size: 20px;font-weight: bold;margin-bottom: 0px;">
-                                        Admin Name</h1>
+                                        <?php
+                                        echo "$firstname" . " $lastname";
+                                        ?>
+                                    </h1>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <h1 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 15px;">Admin
-                                        Position
+                                    <h1 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 15px;">User
                                     </h1>
                                 </div>
                             </div>
@@ -60,36 +69,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 d-xl-flex justify-content-xl-center align-items-xl-center">
-                <div>
-                    <div class="card text-center" style="box-shadow: 1px 4px 20px rgba(0,0,0,0.25);">
-                        <div class="card-body" style="padding: 25px 16px;">
-                            <h4 class="card-title" style="font-family: Karla, sans-serif;font-weight: bold;">View User
-                                Information</h4>
-                            <div class="row">
-                                <div class="col">
-                                    <h6 class="mb-2" style="font-size: 13px;font-family: Karla, sans-serif;">Edit Member
-                                        Information
-                                    </h6><a class="btn btn-primary" role="button" href="admin_edituser.php"
-                                        style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;width: 120px;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card text-center"
-                        style="margin-top: 40px;margin-bottom: 100px;box-shadow: 1px 4px 20px rgba(0,0,0,0.25), 1px 4px 20px rgba(0,0,0,0.25);">
-                        <div class="card-body" style="padding: 25px 16px;">
-                            <h4 class="card-title" style="font-family: Karla, sans-serif;font-weight: bold;">User
-                                Activities</h4><a class="btn btn-primary" role="button"
-                                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;margin-bottom: 10px;"
-                                href="queries.php">View
-                                Queries</a><a class="btn btn-primary" role="button"
-                                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;">View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-5 overflow-auto" style="max-height: 84vmin;padding-right:35px;"><a href="admin.php"
+
+            <div class="col-5 overflow-auto" style="max-height: 84vmin;padding-right:35px;"><a href="profile.php"
                     style="padding-bottom: 0px;padding-top: 0px;padding-right: 0px;"><svg
                         xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
                         viewBox="0 0 16 16" class="bi bi-x-square text-muted"
@@ -102,18 +83,19 @@
                         </path>
                     </svg></a>
                 <div>
-                    <h5 style="margin-top: 0px;">Queries</h5>
+                    <h5 style="margin-top: 0px;">Your Inquiries</h5>
                     <hr>
                 </div>
                 <!--Just use this whole card div for showing message-->
                 <?php
-                require ($_SERVER['DOCUMENT_ROOT'] . "/backend/connection.php");
-                $conn = get_connection();
-                $query = "SELECT Id, userinfo_id,UserInquiryName, UserInquiryEmail, InquiryTime, InquiryDateString, UserInquiry, InquiryStatus, InquiryReply, InquiryAttachment FROM UserInquiries ORDER BY InquiryTime DESC";
+                $userInfo_Id = getUserInfoIdFromSession($conn, $userId);
+
+                $query = "SELECT Id, UserInquiryName, UserInquiryEmail, InquiryTime, InquiryDateString, UserInquiry, InquiryStatus, InquiryReply, InquiryAttachment FROM UserInquiries WHERE userinfo_id = '$userInfo_Id' ORDER BY InquiryTime DESC";
                 $result = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
+                        $user = $row["userinfo_id"];
                         $senderName = $row["UserInquiryName"];
                         $senderEmail = $row["UserInquiryEmail"];
                         $timestamp = $row["InquiryTime"];
@@ -140,9 +122,7 @@
                         $baseURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/";
 
                         echo '<div class="card-body">';
-                        echo '<h4 class="card-title">' . $senderName . ' / ' . $senderEmail . '</h4>';
-                        echo '<h6 class="text-muted card-subtitle mb-2">' . $formattedTimestamp . '</h6>';
-                        // Display the image with specified dimensions
+                        echo '<h4 class="card-title">Sent ' . $formattedTimestamp . '</h6>';
                         if ($senderfile == null) {
                             echo "<p class = 'text-muted'>No attachments<p>";
                         } else {
@@ -150,48 +130,20 @@
                         }
                         echo '<p class="card-text">' . $message . '</p>';
                         echo '<p class="card-text">Day of Inquiry: ' . $inquiryDateString . '</p>'; // Display InquiryDateString
-                        if ($status == "unresolved") {
-                            // Check if "id" key exists in $row array before using it
-                            if (isset($row["Id"])) {
-                                echo '<a class="btn btn-outline-success" href="../backend/resolve_inquiry.php?id=' . $row["Id"] . '">Resolve</a>';
-                                echo '<a class="btn btn-outline-warning" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">Remove</a>';
-                                echo '<a class="card-link" href="../backend/reply_inquiry.php?id=' . $row["Id"] . '">Reply</a>';
-                            } else {
-                                echo "Error: Inquiry ID not found.";
-                            }
+                
+                        if ($inquiryreply == "") {
+                            echo '<p class="card-text">No admin reply</p>';
                         } else {
-                            echo '<span class=" text-success fw-bold" style="margin-right:10px;margin-left:5px">Resolved</span>';
-                            echo '<a class="btn btn-outline-warning" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">Remove Inquiry</a>';
+                            echo '<p class="card-text">Admin Reply: ' . $inquiryreply . '</p>';
                         }
+
                         echo '</div></div>';
                     }
                 } else {
                     echo "No inquiries found.";
                 }
 
-                echo '
-						<div class="card" style="margin-bottom:20px;">
-						<div class="card-body">
-                        <h4 class="card-title">Sender name / email</h4>
-                        <h6 class="text-muted card-subtitle mb-2">timestamp</h6>
-                        <p class="card-text">Message bla bla bla Nullam id dolor id nibh ultricies vehicula ut id elit.
-                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                            gravida at eget metus.</p>
-						<a class="btn btn-outline-success" href="#">Resolve</a>
-						<a class="btn btn-outline-warning" href="#">Remove</a>
-						<a class="btn btn-link" href="#inputForm" data-bs-toggle="collapse">Reply</a>
-						<div class="collapse" id="inputForm">
-						<form>
-							<div class="mb-4" style="margin-top:10px;">
-								<textarea class"" placeholder="Reply here..."></textarea>
-								<input type="submit" value="Submit">
-							</div>
-						</form>
-						</div>
-						</div>
-						</div>
-                        '
-                    ?>
+                ?>
             </div>
         </div>
     </div>
