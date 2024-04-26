@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contactemail = $_POST["emailaddress"];
     $landline = $_POST["landline"];
     $homeaddress = $_POST["homeaddress"];
+    $phonenumber = $_POST["phonenum"];
     $districtbarangay = $_POST["districtbarangay"];
     $municipalitycity = $_POST["municipalitycity"];
 
@@ -31,12 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         emailaddress,
         landline,
         homeaddress,
+        mobilenumber,
         districtbarangay,
         municipalitycity
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($conn, $userinfoQueries);
-    mysqli_stmt_bind_param($stmt, "ssssssssssss", $firstname, $middlename, $surname, $gender, $nationality, $placeofbirth, $civilstatus, $contactemail, $landline, $homeaddress, $districtbarangay, $municipalitycity);
+    mysqli_stmt_bind_param($stmt, "sssssssssssss", $firstname, $middlename, $surname, $gender, $nationality, $placeofbirth, $civilstatus, $contactemail, $landline, $homeaddress, $phonenumber, $districtbarangay, $municipalitycity);
     mysqli_stmt_execute($stmt);
 
     $userInfoId = mysqli_insert_id($conn);
@@ -140,9 +142,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
                                                 Middle Name</p><input class="form-control" type="text"
                                                 name="middlename">
-                                            <p class="text-start"
+                                            <!--<p class="text-start"
                                                 style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
-                                                Gender</p><input class="form-control" type="text" name="gender">
+                                                Gender</p><input class="form-control" type="text" name="gender">-->
+                                            <select name="gender" id="gender" class="text-start"
+                                                style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
+                                                <option value="">-Select Gender-</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Prefer not to say</option>
+                                            </select>
                                             <p class="text-start"
                                                 style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
                                                 Civil Status</p><input class="form-control" type="text"
@@ -170,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <div class="col">
                                                 <p class="text-start"
                                                     style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
-                                                    Mobile Number</p><input class="form-control" type="text"
+                                                    Mobile Number</p><input class="form-control" type="number"
                                                     name="phonenum">
                                                 <p class="text-start"
                                                     style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
@@ -180,7 +189,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <div class="col">
                                                 <p class="text-start"
                                                     style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
-                                                    Landline</p><input class="form-control" type="text" name="landline">
+                                                    Landline</p><input class="form-control" type="number"
+                                                    name="landline">
                                                 <p class="text-start"
                                                     style="margin-bottom: 0px;font-family: Karla, sans-serif;font-size: 14px;">
                                                     Municipality/City</p><input class="form-control" type="text"
