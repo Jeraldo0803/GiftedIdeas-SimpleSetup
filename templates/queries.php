@@ -83,13 +83,15 @@
                                 Activities</h4><a class="btn btn-primary" role="button"
                                 style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;margin-bottom: 10px;"
                                 href="queries.php">View
-                                Queries</a><a class="btn btn-primary" role="button"
-                                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;">View</a>
+                                Queries</a>
+								
+								<!--<a class="btn btn-primary" role="button"
+                                style="font-family: 'Montserrat Alternates', sans-serif;font-size: 13px;background: #A83565;border-color: var(--bs-navbar-toggler-border-color);border-radius: 5px;min-width: 95%;">View</a>-->
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-5 overflow-auto" style="max-height: 84vmin;padding-right:35px;"><a href="admin.php"
+            <div class="col-5 overflow-auto" style="max-height: 84vmin;padding-right:35px;"><!--a href="../templates/admin.php"
                     style="padding-bottom: 0px;padding-top: 0px;padding-right: 0px;"><svg
                         xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
                         viewBox="0 0 16 16" class="bi bi-x-square text-muted"
@@ -100,9 +102,10 @@
                         <path
                             d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708">
                         </path>
-                    </svg></a>
+                    </svg></a-->
                 <div>
-                    <h5 style="margin-top: 0px;">Queries</h5>
+					<br>
+                    <h3 style="margin-top: 0px;">Queries</h5>
                     <hr>
                 </div>
                 <!--Just use this whole card div for showing message-->
@@ -140,7 +143,7 @@
                         $baseURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/";
 
                         echo '<div class="card-body">';
-                        echo '<h4 class="card-title">' . $senderName . ' / ' . $senderEmail . '</h4>';
+                        echo '<h5 class="card-title">' . $senderName . ' / ' . $senderEmail . '</h4>';
                         echo '<h6 class="text-muted card-subtitle mb-2">' . $formattedTimestamp . '</h6>';
                         // Display the image with specified dimensions
                         if ($senderfile == null) {
@@ -150,12 +153,15 @@
                         }
                         echo '<p class="card-text">' . $message . '</p>';
                         echo '<p class="card-text">Day of Inquiry: ' . $inquiryDateString . '</p>'; // Display InquiryDateString
+						if ($inquiryreply != null) {	
+							echo '<p class="card-text">Latest Reply: ' . $inquiryreply . '</p>'; // reply
+						}
                         if ($status == "unresolved") {
                             // Check if "id" key exists in $row array before using it
                             if (isset($row["Id"])) {
-                                echo '<a class="btn btn-outline-success" href="../backend/resolve_inquiry.php?id=' . $row["Id"] . '">Resolve</a>';
-                                echo '<a class="btn btn-outline-warning" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">Remove</a>';
-                                echo '<a class="card-link" href="../backend/reply_inquiry.php?id=' . $row["Id"] . '">Reply</a>';
+                                echo '<a class="btn btn-outline-success" href="../backend/resolve_inquiry.php?id=' . $row["Id"] . '">Resolve</a>&emsp; ';
+                                echo '<a class="btn btn-outline-warning" href="../backend/remove_inquiry.php?id=' . $row["Id"] . '">Remove</a>&emsp;';
+                                echo '<a class="btn btn-outline-primary" href="../backend/reply_inquiry.php?id=' . $row["Id"] . '">Reply</a> &emsp;';
                             } else {
                                 echo "Error: Inquiry ID not found.";
                             }
@@ -169,7 +175,7 @@
                     echo "No inquiries found.";
                 }
 
-                echo '
+/*                 echo '
 						<div class="card" style="margin-bottom:20px;">
 						<div class="card-body">
                         <h4 class="card-title">Sender name / email</h4>
@@ -190,7 +196,7 @@
 						</div>
 						</div>
 						</div>
-                        '
+                        ' */
                     ?>
             </div>
         </div>

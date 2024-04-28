@@ -1,6 +1,8 @@
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . "/backend/common.php");
 check_admin_auth();
+header("Location: queries.php");
+  exit();
 ?>
 
 <!DOCTYPE html>
