@@ -149,7 +149,7 @@ include ($_SERVER['DOCUMENT_ROOT'] . '/backend/common.php');
 									<option value="Montserrat">Montserrat</option>
 									<option value="Merriweather">Merriweather</option>
 									<option value="Playfair Display">Playfair Display</option>
-								</select></label><span>   </span><label class="form-label d-xxl-flex align-items-xxl-start" for="text-color">Text Color<span> </span><input type="color" /></label></div>
+								</select></label><span>   </span><label class="form-label d-xxl-flex align-items-xxl-start" for="text-color">Text Color<span> </span><input type="color" id="text-color"/></label></div>
                             <br><div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start"><label class="form-label" style="padding-top: 2px;" for="text-font-size">Font Size  <input id="text-font-size" type="range" min="12" max="120" step="0.5" value="&#39;45&#39;" /></label><span>   </span><label class="form-label" style="padding-top: 2px;" for="text-line-height">Line Height  <input id="text-line-height" type="range" min="0" max="10" step="0.1" value="5.5" /></label></div>
 
                             <ul class="list-group list-group-horizontal-lg d-xxl-flex justify-content-xxl-start">
